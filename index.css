@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #091921;
+}
+
+.wrapper{
+    display: flex;
+    gap: 100px;
+}
+
+.clock{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(clock.png),
+                radial-gradient(circle, rgb(37, 73, 90) 0%, rgb(25, 48, 60) 11%, rgba(9,25,33,1) 38%);
+    background-size: cover;
+    border-radius: 20%;
+    box-shadow: 0 -5px 5px rgba(134, 134, 134, 0.35),
+                inset 0 -5px 5px #191919,
+                0 5px 5px rgba(134, 134, 134, 0.35),
+                inset 0 5px 5px #191919;
+}
+
+.clock:before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    z-index: 999;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec{
+    position: absolute;
+}
+
+.clock .hour, .hr,
+.clock .hour, .hrL,
+.clock .hour, .hrM{
+    width: 160px;
+    height: 160px;
+}
+
+.clock .min, .mn,
+.clock .min, .mnL,
+.clock .min, .mnM{
+    width: 190px;
+    height: 190px;
+}
+
+.clock .sec, .sc,
+.clock .sec, .scL,
+.clock .sec, .scM{
+    width: 230px;
+    height: 230px;
+}
+
+.hr, .mn, .sc,
+.hrL, .mnL, .scL,
+.hrM, .mnM, .scM{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr:before,
+.hrL:before,
+.hrM:before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background-color: #ffc600;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+
+.mn:before,
+.mnL:before,
+.mnM:before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background-color: #fff;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+
+.sc:before,
+.scL:before,
+.scM:before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background-color: #fff;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
+
+.clock_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.city{
+    font-family: 'Yeseva One', cursive;
+    font-size: 32px;
+    color: #fff;
+}
+
+.digital,
+.londonDigital,
+.moscowDigital{
+    font-family: 'Yeseva One', cursive;
+    font-size: 18px;
+    color: #fff;
+}
+
+.date, .dateL, .dateM{
+    font-family: 'Yeseva One', cursive;
+    font-size: 12px;
+    color: #fff;
+}
+
