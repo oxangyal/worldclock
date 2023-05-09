@@ -1,5 +1,6 @@
 
 const deg = 6;
+//Boston
 const hr = document.querySelector('#hr');
 const sc = document.querySelector('#sc');
 // London
@@ -13,7 +14,6 @@ const date = document.querySelector('.date');
 const dateL = document.querySelector('.dateL');
 const dateM = document.querySelector('.dateM');
 
-// Local date and time (Boston)
 
 // function getDate() {
 //     let date = new Date();
@@ -25,21 +25,37 @@ const dateM = document.querySelector('.dateM');
 
 //     return date.toLocaleDateString('en-US', { timeZone: 'America/New_York' }, options);
 
-// }   
+// }
+
+// Local date and time (Boston)
 
 
-// Get local time in digital format
-
-function getTime() {
+function getTimeBoston(){
     let day = new Date();
     let options = { timeZone: 'America/New_York' };
     let timeStr = day.toLocaleString('en-US', options);
     let weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long', timeZone: 'America/New_York' }).format(day);
     
     return `<center>${weekday}<br><br> ${timeStr}`;
+} 
 
-    return timeStr;
-}
+setInterval(() => {
+    let bostonTime = new Date().toLocaleString("en-US", {timeZone: "America/New_York"});
+        bostonTime = new Date(bostonTime);
+
+    let hh = bostonTime.getHours() * 30;
+    let mm = bostonTime.getMinutes() * deg;
+    let ss = bostonTime.getSeconds() * deg;
+
+    hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
+    mn.style.transform = `rotateZ(${(mm)}deg)`;
+    sc.style.transform = `rotateZ(${(ss)}deg)`;
+
+    // dateL.innerHTML = getDateLondon();
+    document.querySelector('.bostonDigital').innerHTML = getTimeBoston();
+}, 1000);
+
+
 
 // function getTime() {
 //     let day = new Date();
@@ -48,21 +64,6 @@ function getTime() {
 //     let ss = day.getSeconds();
 //     return `${hh < 10 ? '0' + hh : hh}:${mm < 10 ? '0' + mm : mm}:${ss < 10 ? '0' + ss : ss}`;
 // }
-
-setInterval(() => {
-    let day = new Date();
-    let hh = day.getHours() * 30;
-    let mm = day.getMinutes() * deg;
-    let ss = day.getSeconds() * deg;
-
-    hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
-    mn.style.transform = `rotateZ(${(mm)}deg)`;
-    sc.style.transform = `rotateZ(${(ss)}deg)`;
-
-    // date.innerHTML = getDate();
-    document.querySelector('.digital').innerHTML = getTime();
-}, 1000);
-
 
 
 // London date and time 
