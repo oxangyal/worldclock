@@ -56,7 +56,6 @@ setInterval(() => {
 }, 1000);
 
 
-
 // function getTime() {
 //     let day = new Date();
 //     let hh = day.getHours();
@@ -64,7 +63,6 @@ setInterval(() => {
 //     let ss = day.getSeconds();
 //     return `${hh < 10 ? '0' + hh : hh}:${mm < 10 ? '0' + mm : mm}:${ss < 10 ? '0' + ss : ss}`;
 // }
-
 
 // London date and time 
 
